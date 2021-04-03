@@ -15,7 +15,6 @@ else
 end
 
 def position_taken?(board, index="X")
-
 if board[index] == "" || board[index] == " " || board[index] == nil
   return false
   puts "Good choice!"
@@ -34,12 +33,13 @@ def move(board, index, player_chr="X")
 end
 
 def turn(board)
-  index = input_to_index(user_input)
   puts "Please enter 1-9"
-  if board[index] == "" || board[index]== " " || board[index]==nil
-    return false
+  user_input = gets.strip
+  index = input_to_index(user_input)
+  if valid_move?(board, index)
+    player_move(board, index, current_player(board))
+    display_board(board)
   else
-    return true
-    puts "Please pick another space!"
+    turn(board)
   end
 end
