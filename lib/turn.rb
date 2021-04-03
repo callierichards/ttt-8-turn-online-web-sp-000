@@ -34,12 +34,12 @@ def move(board, index, player_chr="X")
 end
 
 def turn(board)
-  # index = input_to_index(user_input)
-  # puts "Please enter 1-9"
-  # if board[index] == "" || board[index]== " " || board[index]==nil
-  #   return false
-  # else
-  #   return true
-  #   puts "Please pick another space!"
-  # end
+  index = input_to_index(user_input)
+  puts "Please enter 1-9"
+  if board[index] == "" || board[index]== " " || board[index]==nil
+    return false
+  else
+    return true
+    puts "Please pick another space!"
+  end
 end
